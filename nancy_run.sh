@@ -51,7 +51,13 @@ function attach_db_ebs_drive() {
 #   None
 #######################################
 function help() {
-  cat nancy_run.md | less -RFX
+  local help=$(cat ${BASH_SOURCE%/*}/nancy_run.md)
+  help=${help//"<b>"/"\033[1m"}
+  help=${help//"</b>"/"\033[22m"}
+  help=${help//"\`\`\`"/"'"}
+  help=${help//"\`"/"'"}
+  help=${help//"==="/""}
+  echo -e "$help" | less -RFX
 }
 
 #######################################
