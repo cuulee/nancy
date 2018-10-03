@@ -132,7 +132,7 @@
 
   The following command can be used to get such files:
   
-    `pg_basebackup -U postgres -zPFt -Z 5 -D /path/to/ebs/volume/root`
+    pg_basebackup -U postgres -zPFt -Z 5 -D /path/to/ebs/volume/root
     
   Here '-Z 5' means that level 5 to be used for compression, you can choose any value from 0 to 9.
 
@@ -184,7 +184,7 @@
 
   SQL changing database somehow before running workload. For example, DDL:
 
-    `create index i_t1_experiment on t1 using btree(col1);`
+    create index i_t1_experiment on t1 using btree(col1);
 
   <b>--delta-sql-undo</b> (string)
 
@@ -193,7 +193,7 @@
   might be not possible in some cases. 'UNDO SQL' example reverting index
   creation:
 
-    `drop index i_t1_experiment;`
+    drop index i_t1_experiment;
 
   <b>--delta-config</b> (string)
 
@@ -248,4 +248,4 @@
 
 <b>SEE ALSO</b>
 
-    `nancy help`
+    nancy help
