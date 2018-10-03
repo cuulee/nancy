@@ -131,7 +131,9 @@
   * pg_xlog.tar.gz for Postgres version up to 9.6 or pg_wal.tar.gz for Postgres 10+
 
   The following command can be used to get such files:
+  
     `pg_basebackup -U postgres -zPFt -Z 5 -D /path/to/ebs/volume/root`
+    
   Here '-Z 5' means that level 5 to be used for compression, you can choose any value from 0 to 9.
 
   <b>--db-pgbench</b> (string)
