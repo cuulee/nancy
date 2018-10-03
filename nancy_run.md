@@ -82,8 +82,8 @@
 
   Specify the major version of PostgreSQL. Allowed values:
 
-    * '9.6'
-    * '10' (default)
+  * '9.6'
+  * '10' (default)
 
   Currently, there is no way to specify the minor version – it is always the
   most recent version, available in the official PostgreSQL APT repository (see
@@ -97,8 +97,8 @@
 
   Perform \"auto-tuning\" for PostgreSQL config. Allowed values:
 
-    * \"oltp\" to auto-tune Postgres for OLTP workload,
-    * \"olap\" to auto-tune Postgres for OLAP (analytical) workload.
+  * "oltp" to auto-tune Postgres for OLTP workload,
+  * "olap" to auto-tune Postgres for OLAP (analytical) workload.
 
   This option can be combined with \"--pg-config\" – in this case, it will be
   applied *after* it (so \"auto-tuning\" values will be added to the end of
@@ -112,12 +112,12 @@
 
   Database dump (created by pg_dump) to be used as an input. May be:
 
-    * path to dump file (must start with 'file://' or 's3://'), may be:
-      - plain dump made with 'pg_dump',
-      - gzip-compressed plain dump ('*.gz'),
-      - bzip2-compressed plain dump ('*.bz2'),
-      - dump in \"custom\" format, made with 'pg_dump -Fc ..' ('*.pgdmp'),
-    * sequence of SQL commands specified as in a form of plain text.
+  * path to dump file (must start with 'file://' or 's3://'), may be:
+    * plain dump made with 'pg_dump',
+    * gzip-compressed plain dump ('*.gz'),
+    * bzip2-compressed plain dump ('*.bz2'),
+    * dump in \"custom\" format, made with 'pg_dump -Fc ..' ('*.pgdmp'),
+  * sequence of SQL commands specified as in a form of plain text.
 
   <b>--db-name</b> (string)
 
@@ -140,7 +140,7 @@
 
   Initialize database for pgbench. Contains pgbench init arguments:
 
-    * Example nancy run --db-pgbench \"-s 100\"
+  * Example `nancy run --db-pgbench "-s 100"`
 
   <b>--commands-after-container-init</b> (string)
 
@@ -184,7 +184,7 @@
 
   SQL changing database somehow before running workload. For example, DDL:
 
-    create index i_t1_experiment on t1 using btree(col1);
+    `create index i_t1_experiment on t1 using btree(col1);`
 
   <b>--delta-sql-undo</b> (string)
 
@@ -193,7 +193,7 @@
   might be not possible in some cases. 'UNDO SQL' example reverting index
   creation:
 
-    drop index i_t1_experiment;
+    `drop index i_t1_experiment;`
 
   <b>--delta-config</b> (string)
 
@@ -207,9 +207,9 @@
   Path to a local ('file://...') or S3 ('s3://...') directory where artifacts
   of the experimental run will be placed. Among these artifacts:
 
-    * detailed performance report in JSON format
-    * whole PostgreSQL log, gzipped
-    * full PostgreSQL config used in this experimental run
+  * detailed performance report in JSON format
+  * whole PostgreSQL log, gzipped
+  * full PostgreSQL config used in this experimental run
 
   <b>--aws-ec2-type</b> (string)
 
