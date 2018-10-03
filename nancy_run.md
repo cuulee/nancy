@@ -50,9 +50,7 @@
   Where the experimental run will be performed. Allowed values:
 
   * 'localhost' (default)
-
   * 'aws'
-
   * 'gcp' (WIP, not yet implemented)
 
   If 'localhost' is specified (or --run-on is omitted), Nancy will perform the
@@ -95,13 +93,13 @@
 
   <b>--pg-config-auto</b> (enum: oltp|olap)
 
-  Perform \"auto-tuning\" for PostgreSQL config. Allowed values:
+  Perform "auto-tuning" for PostgreSQL config. Allowed values:
 
-  * "oltp" to auto-tune Postgres for OLTP workload,
-  * "olap" to auto-tune Postgres for OLAP (analytical) workload.
+  * 'oltp' to auto-tune Postgres for OLTP workload,
+  * 'olap' to auto-tune Postgres for OLAP (analytical) workload.
 
-  This option can be combined with \"--pg-config\" – in this case, it will be
-  applied *after* it (so \"auto-tuning\" values will be added to the end of
+  This option can be combined with "--pg-config" – in this case, it will be
+  applied *after* it (so "auto-tuning" values will be added to the end of
   the postgresql.conf file).
 
   <b>--db-prepared-snapshot</b> (string)
@@ -116,7 +114,7 @@
     * plain dump made with 'pg_dump',
     * gzip-compressed plain dump ('*.gz'),
     * bzip2-compressed plain dump ('*.bz2'),
-    * dump in \"custom\" format, made with 'pg_dump -Fc ..' ('*.pgdmp'),
+    * dump in "custom" format, made with 'pg_dump -Fc ..' ('*.pgdmp'),
   * sequence of SQL commands specified as in a form of plain text.
 
   <b>--db-name</b> (string)
@@ -129,18 +127,18 @@
   ID of an AWS EBS volume, containing the database backup (made with pg_basebackup).
 
   In the volume's root directory, the following two files are expected:
-    - base.tar.gz
-    - pg_xlog.tar.gz for Postgres version up to 9.6 or pg_wal.tar.gz for Postgres 10+
+  * base.tar.gz
+  * pg_xlog.tar.gz for Postgres version up to 9.6 or pg_wal.tar.gz for Postgres 10+
 
   The following command can be used to get such files:
-    'pg_basebackup -U postgres -zPFt -Z 5 -D /path/to/ebs/volume/root'
+    `pg_basebackup -U postgres -zPFt -Z 5 -D /path/to/ebs/volume/root`
   Here '-Z 5' means that level 5 to be used for compression, you can choose any value from 0 to 9.
 
   <b>--db-pgbench</b> (string)
 
   Initialize database for pgbench. Contains pgbench init arguments:
 
-  * Example `nancy run --db-pgbench "-s 100"`
+  Example: `nancy run --db-pgbench "-s 100"`
 
   <b>--commands-after-container-init</b> (string)
 
@@ -174,7 +172,7 @@
 
   <b>--workload-pgbench</b> (string)
 
-  pgbench arguments to pass for tests.  Ex: \"-c 10 -j 4 -t 1000\"
+  pgbench arguments to pass for tests.  Ex: "-c 10 -j 4 -t 1000"
 
   <b>--workload-basis</b> (string)
 
@@ -248,4 +246,4 @@
 
 <b>SEE ALSO</b>
 
-    nancy help
+    `nancy help`
