@@ -15,13 +15,13 @@
   specified database and workload.
 
   An experimental run needs the following 4 items to be provided as an input:
-    - environment: hardware or cloud instance type, PostgreSQL version, etc;
-    - database: copy or clone of the database;
-    - workload: 'real' workload or custom SQL;
-    - (optional) delta (a.k.a. target): some DB change to be evaluated:
-      * PostgreSQL config changes, or
-      * some DDL (or arbitrary SQL) such as 'CREATE INDEX ...', or
-      * theoretically, anything else.
+  * environment: hardware or cloud instance type, PostgreSQL version, etc;
+  * database: copy or clone of the database;
+  * workload: 'real' workload or custom SQL;
+  * (optional) delta (a.k.a. target): some DB change to be evaluated:
+    * PostgreSQL config changes, or
+    * some DDL (or arbitrary SQL) such as 'CREATE INDEX ...', or
+    * theoretically, anything else.
 
 <b>OPTIONS</b>
 ===
@@ -49,11 +49,11 @@
 
   Where the experimental run will be performed. Allowed values:
 
-    * 'localhost' (default)
+  * 'localhost' (default)
 
-    * 'aws'
+  * 'aws'
 
-    * 'gcp' (WIP, not yet implemented)
+  * 'gcp' (WIP, not yet implemented)
 
   If 'localhost' is specified (or --run-on is omitted), Nancy will perform the
   run on the localhost in a Docker container so ('docker run' must work
