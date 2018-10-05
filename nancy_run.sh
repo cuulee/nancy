@@ -1756,7 +1756,7 @@ apply_ddl_undo_code
 END_TIME=$(date +%s)
 DURATION=$(echo $((END_TIME-START_TIME)) | awk '{printf "%d:%02d:%02d", $1/3600, ($1/60)%60, $1%60}')
 HDURATION=$(echo $((END_TIME-START_TIME)) | awk '{printf "%d.%02.0f", $1/3600, (($1/60)%60)/60*100}')
-if [[ ! -z "$EC2_PRICE" ]]; then
+if [[ ! -z ${EC2_PRICE+x} ]]; then
 ESTIMATE_COST=`bc << EOF
 $HDURATION * $EC2_PRICE
 EOF
@@ -1775,7 +1775,7 @@ echo -e "  Stat stapshots:     pg_stat_statements.csv,"
 echo -e "                      pg_stat_***.csv"
 echo -e "------------------------------------------------------------------------------"
 echo -e "Total execution time: $DURATION   $HDURATION"
-if [[ ! -z "$ESTIMATE_COST" ]]; then
+if [[ ! -z "${ESTIMATE_COST+x}" ]]; then
 echo -e "Estimated AWS cost: \$$ESTIMATE_COST"
 fi
 echo -e "------------------------------------------------------------------------------"
