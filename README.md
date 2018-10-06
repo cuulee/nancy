@@ -146,7 +146,10 @@ If you experience issues with running (locally) `nancy run` inside `screen` or
 group:
 ```bash
 usermod -aG docker ${USER}
+newgrp docker
 ```
+
+(On some systems it may be `dockerroot` instead of `docker`)
 
 On MacOS, it is recommended to specify `--tmp-path` explicitly, similar to this:
 ```
